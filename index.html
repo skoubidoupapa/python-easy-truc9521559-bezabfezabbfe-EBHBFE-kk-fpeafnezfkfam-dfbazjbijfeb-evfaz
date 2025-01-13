@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Affichage de Code PHP</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-section {
+            background-color: var(--gris-clair);
+            border-left: 5px solid var(--bleu);
+            padding: 20px;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--bleu);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--jaune);
+            color: var(--gris);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PYTHON</div>
+        <ul class="nav-links">
+            <li><a href="hydrogene.html">Hydrogène</a></li>
+            <li><a href="carbonne.html">Carbone</a></li>
+            <li><a href="oxygene.html">Oxygene</a></li>
+            <li><a href="azote.html">Azote</a></li>
+            <li><a href="fer.html">Fer</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="buttons">
+            <button class="btn btn-primary">see more </button>
+            <button class="btn btn-secondary">delete</button>
+        </div>
+
+        <div class="code-section">
+            <pre><code>&lt;?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "gestion_produits";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn-&gt;connect_error) {
+    die("Échec de la connexion : " . $conn-&gt;connect_error);
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Contrôle Web Full Stack&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;div class="nav-content"&gt;
+            &lt;div class="logo"&gt;&lt;/div&gt;
+            &lt;ul class="nav-links"&gt;
+                &lt;li&gt;&lt;a href="index.php"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;main class="principal"&gt;
+        &lt;section class="database"&gt;
+            &lt;div class="Produits"&gt;
+                &lt;h1&gt;
+                &lt;?php
+                $query = "SELECT * FROM produits";
+                $result = mysqli_query($conn, $query);
+
+                if (!$result) {
+                    die("Erreur lors de l'exécution de la requête : " . mysqli_error($conn));
+                }
+
+                if (mysqli_num_rows($result) &gt; 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "Le prix de " . htmlspecialchars($row['nom']) . " à l'unité est " 
+                             . htmlspecialchars($row['prix']) . " €. Il fait partie de la catégorie " 
+                             . htmlspecialchars($row['categorie']) . " et il reste " 
+                             . htmlspecialchars($row['stock']) . " unités en stock. Sa date d'expiration est " 
+                             . htmlspecialchars($row['date_expiration']) . ".&lt;br&gt;";
+                    }
+                } else {
+                    echo "Aucun produit trouvé.";
+                }
+                ?&gt;
+                &lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+    </div>
+</body>
+</html>

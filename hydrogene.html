@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Code SQL - Hydrogène</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px; /* Réduit la largeur du conteneur */
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-section {
+            background-color: var(--gris-clair);
+            border-left: 5px solid var(--bleu);
+            padding: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+            max-height: 400px; /* Limite la hauteur */
+            overflow-y: auto; /* Ajoute un scroll vertical si nécessaire */
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+            font-size: 12px; /* Réduit la taille de police */
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+
+        .code-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Code SQL - Hydrogène</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="code-header">
+            <span>SQL</span>
+            <button class="copy-btn" onclick="copyCode()">Copier</button>
+        </div>
+        <div class="code-section">
+            <pre><code>-- Créer la base de données si elle n'existe pas
+CREATE DATABASE IF NOT EXISTS gestion_produits;
+USE gestion_produits;
+
+-- Créer la table produits avec les bonnes colonnes
+CREATE TABLE IF NOT EXISTS produits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prix DECIMAL(10, 2) NOT NULL,
+    categorie VARCHAR(50) NOT NULL,
+    stock INT NOT NULL,
+    date_expiration DATE NOT NULL
+);
+
+-- Insérer des données dans la table produits
+INSERT INTO produits (nom, prix, categorie, stock, date_expiration) 
+VALUES 
+    ('Pommes', 3.50, 'Fruits', 120, '2024-12-10'), 
+    ('Lait entier', 1.20, 'Produits laitiers', 80, '2024-12-05'), 
+    ("Huile d'olive", 8.00, 'Huiles de cuisson', 50, '2025-03-15'), 
+    ('Pain complet', 2.00, 'Boulangerie', 60, '2024-12-02'), 
+    ('Œufs plein air', 2.50, 'Produits laitiers', 200, '2024-12-18'), 
+    ('Filet de poulet', 5.00, 'Viande', 40, '2024-12-07');</code></pre>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.querySelector('pre code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>

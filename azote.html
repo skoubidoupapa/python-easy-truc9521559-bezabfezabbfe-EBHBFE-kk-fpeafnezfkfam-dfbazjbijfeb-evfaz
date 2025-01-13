@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Objectifs Pédagogiques - Cours Détail</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid var(--bleu);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--bleu);
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--gris);
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            float: right;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cybersécurité et Cyberespace</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Série de Cours Détail pour Chaque Objectif Pédagogique</h1>
+            <button class="copy-btn" onclick="copyContent()">Copier le texte</button>
+        </div>
+
+        <h2>Objectif : Comprendre l'OSINT</h2>
+        <h3>Cours : Introduction à l’OSINT (Open Source Intelligence)</h3>
+        <ol>
+            <li><strong>Définition et concepts clés</strong>
+                <ul>
+                    <li>OSINT : collecte d’informations accessibles au public.</li>
+                    <li>Importance dans la cybersécurité, l’intelligence économique et l’investigation.</li>
+                </ul>
+            </li>
+            <li><strong>Domaines d’application</strong>
+                <ul>
+                    <li>Veille concurrentielle.</li>
+                    <li>Investigation judiciaire ou privée.</li>
+                    <li>Due Diligence.</li>
+                </ul>
+            </li>
+            <li><strong>Cycle d’intelligence OSINT</strong>
+                <ul>
+                    <li>Définir les objectifs.</li>
+                    <li>Collecter, analyser et diffuser les informations.</li>
+                </ul>
+            </li>
+            <li><strong>Outils d’OSINT</strong>
+                <ul>
+                    <li>Reconnaissance passive : Google Dorks, Shodan, Maltego.</li>
+                    <li>Reconnaissance active : WHOIS, DNSdumpster.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Réaliser une recherche OSINT simple sur une entreprise : identifier son site web, ses réseaux sociaux, et ses mentions publiques.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Comprendre l’éthique en OSINT</h2>
+        <h3>Cours : Éthique et responsabilité dans la pratique OSINT</h3>
+        <ol>
+            <li><strong>Les principes éthiques</strong>
+                <ul>
+                    <li>Respect de la vie privée et des données personnelles.</li>
+                    <li>Transparence et intégrité dans l’analyse des données.</li>
+                </ul>
+            </li>
+            <li><strong>Cas d’usage et dérives possibles</strong>
+                <ul>
+                    <li>Exemples de violations éthiques en OSINT.</li>
+                    <li>Comment éviter les abus ?</li>
+                </ul>
+            </li>
+            <li><strong>Responsabilités des professionnels</strong>
+                <ul>
+                    <li>Obligation de rendre compte des résultats.</li>
+                    <li>Travailler dans le cadre légal.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Étudier un cas fictif où l’éthique a été violée, et proposer des solutions pour respecter les principes éthiques.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Comprendre le cadre légal autour de la pratique</h2>
+        <h3>Cours : Législation et OSINT</h3>
+        <ol>
+            <li><strong>Les bases juridiques</strong>
+                <ul>
+                    <li>RGPD (Règlement Général sur la Protection des Données).</li>
+                    <li>Lois nationales sur la cybersécurité et la vie privée.</li>
+                </ul>
+            </li>
+            <li><strong>Limites légales en OSINT</strong>
+                <ul>
+                    <li>Différence entre collecte publique et intrusion.</li>
+                    <li>Les frontières entre le légal et l’illégal.</li>
+                </ul>
+            </li>
+            <li><strong>Acteurs judiciaires et réglementaires</strong>
+                <ul>
+                    <li>Autorités compétentes : CNIL (en France), autorités locales.</li>
+                    <li>Coopération avec les forces de l’ordre.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Identifier les éléments d’une collecte d’information qui respectent le cadre légal dans un cas fictif.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Savoir utiliser des requêtes simples</h2>
+        <h3>Cours : Les bases des requêtes OSINT</h3>
+        <ol>
+            <li><strong>Utilisation des moteurs de recherche avancés</strong>
+                <ul>
+                    <li>Google Dorks : syntaxe et exemples pratiques.</li>
+                    <li>Utilisation de filtres pour affiner les recherches.</li>
+                </ul>
+            </li>
+            <li><strong>Requêtes spécifiques à des plateformes</strong>
+                <ul>
+                    <li>WHOIS pour les noms de domaine.</li>
+                    <li>Utilisation de Shodan pour scanner des appareils connectés.</li>
+                </ul>
+            </li>
+            <li><strong>Combiner les sources</strong>
+                <ul>
+                    <li>Cross-checking des informations pour valider leur exactitude.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Réaliser des requêtes avancées pour identifier les informations publiques liées à une entreprise.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Tracer une cartographie des acteurs</h2>
+        <h3>Cours : Cartographie en OSINT</h3>
+        <ol>
+            <li><strong>Qu’est-ce que la cartographie en OSINT ?</strong>
+                <ul>
+                    <li>Visualiser les relations entre actionnaires, dirigeants, filiales et partenaires.</li>
+                    <li>Importance de la représentation graphique.</li>
+                </ul>
+            </li>
+            <li><strong>Les outils de cartographie</strong>
+                <ul>
+                    <li>Maltego : introduction et fonctionnalités principales.</li>
+                    <li>Gephi pour la représentation de graphes complexes.</li>
+                </ul>
+            </li>
+            <li><strong>Méthodologie de création</strong>
+                <ul>
+                    <li>Collecte des données.</li>
+                    <li>Organisation et structuration des relations.</li>
+                    <li>Visualisation finale.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Réaliser une cartographie simplifiée d’une entreprise fictive incluant les actionnaires, le board et les filiales.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Être éthique dans ses recherches</h2>
+        <h3>Cours : Intégrité et gestion des données sensibles</h3>
+        <ol>
+            <li><strong>Comprendre l’importance de l’éthique en recherche</strong>
+                <ul>
+                    <li>Éviter la manipulation et l’exagération des données.</li>
+                    <li>Ne collecter que les informations nécessaires.</li>
+                </ul>
+            </li>
+            <li><strong>Collaborer avec des acteurs judiciaires</strong>
+                <ul>
+                    <li>Comprendre leurs attentes.</li>
+                    <li>Fournir des preuves respectant les normes légales.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Étudier une collecte fictive et identifier les actions qui violent les principes éthiques.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Maîtriser un outil de cartographie</h2>
+        <h3>Cours : Introduction à Maltego</h3>
+        <ol>
+            <li><strong>Installation et configuration</strong>
+                <ul>
+                    <li>Télécharger et installer Maltego Community Edition.</li>
+                    <li>Configuration des sources de données.</li>
+                </ul>
+            </li>
+            <li><strong>Fonctionnalités principales</strong>
+                <ul>
+                    <li>Création de graphes.</li>
+                    <li>Utilisation des « transforms » pour automatiser la collecte.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Réaliser une cartographie simple avec Maltego, incluant :
+                        <ul>
+                            <li>Une entreprise cible.</li>
+                            <li>Ses actionnaires et filiales.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif : Établir un plan de recherches</h2>
+        <h3>Cours : Méthodologie d’une recherche OSINT</h3>
+        <ol>
+            <li><strong>Définir les objectifs de recherche</strong>
+                <ul>
+                    <li>Comprendre les besoins du projet.</li>
+                    <li>Identifier les sources pertinentes.</li>
+                </ul>
+            </li>
+            <li><strong>Structurer le plan de recherche</strong>
+                <ul>
+                    <li>Étapes clés : collecte, tri, analyse, validation.</li>
+                    <li>Fixer un calendrier et répartir les tâches.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Établir un plan de recherche pour un cas d’investigation réelle.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

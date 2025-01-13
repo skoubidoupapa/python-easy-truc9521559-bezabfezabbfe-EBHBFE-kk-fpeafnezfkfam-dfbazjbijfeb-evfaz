@@ -1,0 +1,61 @@
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "gestion_produits";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn- Oconnect_error) {
+    die("Échec de la connexion : " . $conn- Oconnect_error);
+}
+? O
+
+ P!DOCTYPE html O
+ Phtml lang="fr" O
+ Phead O
+     Pmeta charset="UTF-8" O
+     Pmeta name="viewport" content="width=device-width, initial-scale=1.0" O
+     Ptitle OContrôle Web Full Stack P/title O
+     Plink rel="stylesheet" href="css/style.css" O
+ P/head O
+ Pbody O
+     Pnav O
+         Pdiv class="nav-content" O
+             Pdiv class="logo" O P/div O
+             Pul class="nav-links" O
+                 Pli O Pa href="index.php" OHome P/a O P/li O
+             P/ul O
+         P/div O
+     P/nav O
+
+     Pmain class="principal" O
+         Psection class="database" O
+             Pdiv class="Produits" O
+                 Ph1 O
+                 P?php
+                $query = "SELECT * FROM produits";
+                $result = mysqli_query($conn, $query);
+
+                if (!$result) {
+                    die("Erreur lors de l'exécution de la requête : " . mysqli_error($conn));
+                }
+
+                if (mysqli_num_rows($result)  O 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "Le prix de " . htmlspecialchars($row['nom']) . " à l’unité est " 
+                             . htmlspecialchars($row['prix']) . " €. Il fait partie de la catégorie " 
+                             . htmlspecialchars($row['categorie']) . " et il reste " 
+                             . htmlspecialchars($row['stock']) . " unités en stock. Sa date d’expiration est " 
+                             . htmlspecialchars($row['date_expiration']) . ". Pbr O";
+                    }
+                } else {
+                    echo "Aucun produit trouvé.";
+                }
+                ? O
+                 P/h1 O
+             P/div O
+         P/section O
+     P/main O
+ P/body O
+ P/html O

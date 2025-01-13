@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cybersécurité - Carbone</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid var(--bleu);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--bleu);
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--gris);
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            float: right;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cybersécurité et Cyberespace</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Introduction à la cybersécurité et au cyberespace</h1>
+            <button class="copy-btn" onclick="copyContent()">Copier le texte</button>
+        </div>
+
+        <h2>Partie 1 : La cybersécurité dans le monde</h2>
+        
+        <h3>1.1 Les menaces mondiales en cybersécurité</h3>
+        <p>Les menaces en cybersécurité sont de plus en plus sophistiquées et variées. Parmi les principales menaces mondiales, on retrouve :</p>
+        <ul>
+            <li>Les ransomwares : Des logiciels malveillants qui cryptent les fichiers d'un utilisateur ou d'une entreprise et demandent une rançon pour leur décryptage.</li>
+            <li>Les attaques par phishing : Tentatives de fraude visant à obtenir des informations personnelles sensibles, souvent via des courriels frauduleux.</li>
+            <li>Les attaques DDoS (Distributed Denial of Service) : Des attaques visant à rendre un service ou un site internet indisponible en inondant le serveur de requêtes.</li>
+            <li>Les cyberespionnage et cybercriminalité : Des attaques lancées par des acteurs étatiques ou non-étatiques pour voler des informations sensibles à des fins politiques ou économiques.</li>
+            <li>Les malwares : Des programmes malveillants qui infectent les systèmes pour endommager, voler ou espionner des données.</li>
+        </ul>
+
+        <h3>1.2 L'impact économique et social des cyberattaques</h3>
+        <p>Les cyberattaques ont un impact considérable sur l'économie mondiale :</p>
+        <ul>
+            <li>Perte financière : Selon une étude de l'Institute for Security and Technology (IST), les pertes mondiales dues à la cybercriminalité s'élevaient à près de 1 000 milliards de dollars en 2023.</li>
+            <li>Perturbation des services : Les attaques contre les infrastructures critiques (comme l'électricité, l'eau, et les services de santé) peuvent perturber gravement la vie quotidienne.</li>
+            <li>Atteinte à la réputation : Pour les entreprises, une cyberattaque peut nuire gravement à la confiance des consommateurs et à la réputation de la marque.</li>
+        </ul>
+
+        <h3>1.3 Les principales organisations et initiatives mondiales en cybersécurité</h3>
+        <p>Quelques-unes des principales organisations et initiatives mondiales :</p>
+        <ul>
+            <li>L'Organisation des Nations Unies (ONU) : Elle travaille à créer un cadre juridique international pour les cyberconfits et les cyberattaques.</li>
+            <li>L'Agence européenne pour la cybersécurité (ENISA) : Elle soutient les États membres de l'UE dans la protection des infrastructures numériques.</li>
+            <li>L'International Telecommunication Union (ITU) : Une agence des Nations Unies, qui établit des normes de cybersécurité pour les télécommunications mondiales.</li>
+            <li>Le Forum économique mondial (WEF) : Il publie des rapports annuels sur la cybersécurité et encourage les initiatives globales de collaboration.</li>
+        </ul>
+
+        <h2>Partie 2 : La cybersécurité en France</h2>
+        
+        <h3>2.1 Le cadre législatif français en matière de cybersécurité</h3>
+        <p>La France dispose de plusieurs lois et régulations en matière de cybersécurité. Les principales sont :</p>
+        <ul>
+            <li>La loi de programmation militaire (LPM) 2014-2019 : Cette loi impose aux entreprises opérant dans des secteurs sensibles (énergie, transports, santé) de renforcer la cybersécurité de leurs systèmes.</li>
+            <li>Le RGPD (Règlement général sur la protection des données) : Bien qu'il soit une réglementation européenne, il a un impact majeur sur la cybersécurité en France, notamment en ce qui concerne la protection des données personnelles.</li>
+            <li>La loi Cyber (ou loi n° 2018-133) : Elle impose la gestion des risques liés aux infrastructures critiques et à la cybersécurité pour les opérateurs de services essentiels.</li>
+        </ul>
+
+        <h3>2.2 Les acteurs de la cybersécurité en France</h3>
+        <p>Les principaux acteurs de la cybersécurité en France :</p>
+        <ul>
+            <li>L'Agence nationale de la sécurité des systèmes d'information (ANSSI) : L'ANSSI est l'agence principale en France pour la cybersécurité. Elle conseille le gouvernement, les entreprises et les citoyens pour améliorer la sécurité des systèmes d'information.</li>
+            <li>Le CERT-FR (Computer Emergency Response Team) : Il est le centre d'alerte et de réponse aux incidents de cybersécurité en France, et il gère les incidents touchant les infrastructures critiques du pays.</li>
+            <li>Les CERTs privés : De nombreuses entreprises (comme Orange CyberDefense, Thales, etc.) ont leurs propres CERTs pour protéger leurs services et clients.</li>
+        </ul>
+
+        <h3>2.3 Les défis de la cybersécurité en France</h3>
+        <ul>
+            <li>L'augmentation des cyberattaques : Le nombre d'attaques, notamment les ransomwares, a explosé ces dernières années.</li>
+            <li>Le manque de personnel qualifié : Il y a une pénurie de professionnels qualifiés en cybersécurité en France, ce qui rend difficile la mise en place de mesures de protection adéquates.</li>
+            <li>La protection des infrastructures critiques : L'attaque contre les infrastructures essentielles, comme le système de santé ou l'énergie, demeure une grande préoccupation pour les autorités françaises.</li>
+        </ul>
+
+        <h3>2.4 Les mesures mises en place pour améliorer la cybersécurité</h3>
+        <ul>
+            <li>La formation : L’État et des entreprises privées mettent en place des programmes pour former les jeunes et les professionnels à la cybersécurité.</li>
+            <li>Les investissements : Des fonds sont investis pour renforcer la cybersécurité des entreprises et des administrations publiques, en particulier dans des secteurs sensibles.</li>
+            <li>Les partenariats public-privé : La collaboration entre les entreprises privées, l'ANSSI, et d'autres agences publiques est essentielle pour renforcer la sécurité des infrastructures critiques.</li>
+        </ul>
+
+        <h2>Partie 3 : Les bonnes pratiques en cybersécurité</h2>
+
+        <h3>3.1 La sécurité des données personnelles</h3>
+        <ul>
+            <li>Utiliser des mots de passe forts : Les mots de passe doivent être complexes, uniques pour chaque service et changés régulièrement.</li>
+            <li>Activer l'authentification à deux facteurs : Cette méthode ajoute une couche de sécurité en exigeant un deuxième élément pour accéder à un compte.</li>
+            <li>Mettre à jour les logiciels : Les mises à jour régulières des systèmes d’exploitation, des applications et des antivirus permettent de corriger les vulnérabilités.</li>
+            <li>Être vigilant face aux courriels suspects : Ne jamais cliquer sur des liens ou télécharger des pièces jointes provenant de sources inconnues.</li>
+        </ul>
+
+        <h3>3.2 Les mesures pour les entreprises</h3>
+        <ul>
+            <li>Chiffrement des données : Le chiffrement permet de protéger les informations sensibles en cas de piratage.</li>
+            <li>Firewalls et systèmes de détection d’intrusion : Ces outils surveillent le réseau et bloquent les accès non autorisés.</li>
+            <li>Plans de gestion des incidents : En cas d'attaque, les entreprises doivent avoir un plan d’action pour limiter les dommages et restaurer rapidement les services.</li>
+        </ul>
+    </div>
+
+    <script>
+        function copyContent() {
+            const content = document.querySelector('.container').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Contenu copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Objectifs Pédagogiques - Cours Détail</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid var(--bleu);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--bleu);
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--gris);
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            float: right;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cybersécurité et Cyberespace</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Série de Cours Détail pour Chaque Objectif Pédagogique</h1>
+            <button class="copy-btn" onclick="copyContent()">Copier le texte</button>
+        </div>
+
+        <h2>Objectif 1 : Expliquer ce qu’est la virtualisation</h2>
+        <h3>Cours : Introduction à la virtualisation</h3>
+        <ol>
+            <li><strong>Définition et concepts clés</strong>
+                <ul>
+                    <li>Virtualisation : définition et principes.</li>
+                    <li>Différence entre virtualisation et émulation.</li>
+                    <li>Types de virtualisation : système d’exploitation, applications, réseau.</li>
+                </ul>
+            </li>
+            <li><strong>Pourquoi utiliser la virtualisation ?</strong>
+                <ul>
+                    <li>Isolation des environnements.</li>
+                    <li>Économie des ressources.</li>
+                    <li>Flexibilité pour le développement et le test.</li>
+                </ul>
+            </li>
+            <li><strong>Outils de virtualisation</strong>
+                <ul>
+                    <li>Présentation de logiciels comme VMware, VirtualBox, et KVM.</li>
+                    <li>Démonstration : création d’une machine virtuelle avec VirtualBox.</li>
+                </ul>
+            </li>
+            <li><strong>Avantages et inconvénients</strong>
+                <ul>
+                    <li>Points forts : sécurité, modularité, maintenance simplifiée.</li>
+                    <li>Limites : performances, coûts en ressources.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Installer VirtualBox.</li>
+                    <li>Créer une VM Ubuntu.</li>
+                    <li>Configurer les ressources (RAM, CPU, disque).</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif 2 : Lire du code HTML</h2>
+        <h3>Cours : Les bases du HTML</h3>
+        <ol>
+            <li><strong>Structure d’un document HTML</strong>
+                <ul>
+                    <li>Balises essentielles : &lt;html&gt;, &lt;head&gt;, &lt;body&gt;.</li>
+                    <li>Doctype et hiérarchie des éléments.</li>
+                </ul>
+            </li>
+            <li><strong>Balises HTML de base</strong>
+                <ul>
+                    <li>Titres (&lt;h1&gt; à &lt;h6&gt;).</li>
+                    <li>Paragraphes (&lt;p&gt;).</li>
+                    <li>Listes : ordonnées (&lt;ol&gt;) et non ordonnées (&lt;ul&gt;).</li>
+                </ul>
+            </li>
+            <li><strong>Liens et images</strong>
+                <ul>
+                    <li>Création de liens avec &lt;a href=""&gt;.</li>
+                    <li>Insertion d’images avec &lt;img src=""&gt;.</li>
+                </ul>
+            </li>
+            <li><strong>Structure avancée</strong>
+                <ul>
+                    <li>Tableaux (&lt;table&gt;), formulaires (&lt;form&gt;), et sections (&lt;div&gt;, &lt;section&gt;).</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Créer une page HTML simple contenant :
+                        <ul>
+                            <li>Un titre.</li>
+                            <li>Deux paragraphes.</li>
+                            <li>Une image et un lien externe.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif 3 : Analyser et comprendre une requête HTTP</h2>
+        <h3>Cours : Introduction au protocole HTTP</h3>
+        <ol>
+            <li><strong>Qu’est-ce que le HTTP ?</strong>
+                <ul>
+                    <li>Définition et fonctionnement client-serveur.</li>
+                    <li>Méthodes HTTP : GET, POST, PUT, DELETE.</li>
+                </ul>
+            </li>
+            <li><strong>Structure d’une requête HTTP</strong>
+                <ul>
+                    <li>En-tête de requête.</li>
+                    <li>Corps de requête.</li>
+                </ul>
+            </li>
+            <li><strong>Réponses HTTP</strong>
+                <ul>
+                    <li>Codes de statut : 200 (OK), 404 (Not Found), 500 (Internal Server Error).</li>
+                    <li>Interprétation des réponses.</li>
+                </ul>
+            </li>
+            <li><strong>Outils pour analyser des requêtes</strong>
+                <ul>
+                    <li>Utilisation de Burp Suite et des outils de développement navigateur.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Utiliser un inspecteur de réseau pour analyser une requête.</li>
+                    <li>Identifier les éléments clés (méthode, URL, code de statut).</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif 4 : Définir ce qu’est un système d’exploitation</h2>
+        <h3>Cours : Comprendre les systèmes d’exploitation</h3>
+        <ol>
+            <li><strong>Qu’est-ce qu’un OS ?</strong>
+                <ul>
+                    <li>Définition et rôle d’un OS.</li>
+                    <li>Exemples : Windows, Linux, macOS.</li>
+                </ul>
+            </li>
+            <li><strong>Les fonctions principales d’un OS</strong>
+                <ul>
+                    <li>Gestion des processus.</li>
+                    <li>Gestion de la mémoire.</li>
+                    <li>Gestion des périphériques.</li>
+                    <li>Interface utilisateur.</li>
+                </ul>
+            </li>
+            <li><strong>Types de systèmes d’exploitation</strong>
+                <ul>
+                    <li>OS monoposte, serveur, temps réel, mobile.</li>
+                    <li>Différences entre systèmes propriétaires et open source.</li>
+                </ul>
+            </li>
+            <li><strong>Comparaison entre Windows et Linux</strong>
+                <ul>
+                    <li>Points forts et faibles de chaque système.</li>
+                    <li>Cas d’usage spécifiques.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Identifier les principales fonctionnalités de votre propre système d’exploitation.</li>
+                    <li>Créer une liste des commandes de base sur Linux.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Objectif 5 : Travailler efficacement en groupe</h2>
+        <h3>Cours : Collaboration et gestion de projet</h3>
+        <ol>
+            <li><strong>Pourquoi travailler en groupe ?</strong>
+                <ul>
+                    <li>Avantages de la collaboration.</li>
+                    <li>Rôles et responsabilités.</li>
+                </ul>
+            </li>
+            <li><strong>Les outils de gestion de projet</strong>
+                <ul>
+                    <li>Trello, Asana, ou Microsoft Teams pour organiser les tâches.</li>
+                    <li>GitHub pour le partage de code et le suivi des versions.</li>
+                </ul>
+            </li>
+            <li><strong>Les bonnes pratiques</strong>
+                <ul>
+                    <li>Établir un plan de projet.</li>
+                    <li>Communiquer efficacement.</li>
+                    <li>Résolution de conflits dans un groupe.</li>
+                </ul>
+            </li>
+            <li><strong>Exercice pratique</strong>
+                <ul>
+                    <li>Planifier les étapes d’un projet (exemple : déployer un site web).</li>
+                    <li>Utiliser Trello ou un tableau Kanban pour attribuer des tâches.</li>
+                </ul>
+            </li>
+        </ol>
+
+    </div>
+
+    <script>
+        function copyContent() {
+            const content = document.querySelector('.container').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Contenu copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>

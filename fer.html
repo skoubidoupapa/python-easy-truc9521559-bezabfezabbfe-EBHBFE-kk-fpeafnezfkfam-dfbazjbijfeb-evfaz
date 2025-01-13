@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Python - Exercices</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-section {
+            background-color: var(--gris-clair);
+            border-left: 5px solid var(--bleu);
+            padding: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+
+        .code-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Code Python - Exercices</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="code-header">
+            <span>Code Python</span>
+            <button class="copy-btn" onclick="copyCode()">Copier</button>
+        </div>
+        <div class="code-section">
+            <pre><code># Exercice 1: Calculer le Nième terme de la suite de Fibonacci
+def fibonacci():
+    n = int(input("Entrez un nombre N pour la suite de Fibonacci (N > 2) : "))
+    if n == 0 or n == 1:
+        return 1
+    else:
+        a, b = 1, 1
+        for _ in range(2, n + 1):
+            a, b = b, a + b
+        return b
+
+# Exercice 2: Vérifier si un nombre est premier
+def est_premier():
+    n = int(input("Entrez un nombre pour savoir s'il est premier : "))
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Exercice 3: Trouver les nombres égaux à la somme des cubes de leurs chiffres
+def somme_cubes_chiffres(n):
+    return sum(int(digit) ** 3 for digit in str(n))
+
+def nombres_specials():
+    result = []
+    for num in range(100, 500):
+        if num == somme_cubes_chiffres(num):
+            result.append(num)
+    return result
+
+# Exercice 4: Trouver les nombres parfaits entre 1 et N
+def sommes_diviseurs(n):
+    divisors = [i for i in range(1, n) if n % i == 0]
+    return sum(divisors)
+
+def nombres_parfaits():
+    N = int(input("Entrez un nombre N pour trouver les nombres parfaits jusqu'à N : "))
+    result = []
+    for num in range(1, N + 1):
+        if num == sommes_diviseurs(num):
+            result.append(num)
+    return result
+
+# Exercice 5: Convertir un nombre entier en binaire
+def entier_vers_binaire():
+    n = int(input("Entrez un nombre entier pour le convertir en binaire : "))
+    return bin(n)[2:]
+
+# Exercice 7: Le jeu de Marienbad
+def jeu_marienbad():
+    allumettes = 17
+    while allumettes > 0:
+        print(f"Il reste {allumettes} allumettes.")
+        prise = int(input("Combien d'allumettes voulez-vous prendre (1, 2 ou 3) ? "))
+        while prise not in [1, 2, 3] or prise > allumettes:
+            prise = int(input("Choix invalide. Combien d'allumettes voulez-vous prendre (1, 2 ou 3) ? "))
+        allumettes -= prise
+        if allumettes == 0:
+            print("Vous avez gagné !")
+            break
+
+        # Jeu de l'IA (stratégie pour gagner)
+        if allumettes % 4 == 1:
+            ia_prise = 3
+        elif allumettes % 4 == 2:
+            ia_prise = 2
+        elif allumettes % 4 == 3:
+            ia_prise = 1
+        else:
+            ia_prise = 3 if allumettes >= 3 else 1
+
+        print(f"L'IA prend {ia_prise} allumettes.")
+        allumettes -= ia_prise
+        if allumettes == 0:
+            print("L'IA a gagné !")
+            break
+
+# Exercice 8: Effectuer un swapping (échange des octets de poids fort et de poids faible)
+def swapping():
+    n = int(input("Entrez un nombre pour effectuer un swapping de ses octets de poids fort et de poids faible : "))
+    str_n = str(abs(n))
+    if len(str_n) == 1:
+        return n
+    swapped = str_n[-1] + str_n[1:-1] + str_n[0]
+    return int(swapped) if n >= 0 else -int(swapped)
+
+# Exercice 9: Séparer les chiffres pairs et impairs d'un nombre
+def separer_chiffres():
+    n = int(input("Entrez un nombre pour séparer les chiffres pairs et impairs : "))
+    str_n = str(abs(n))
+    n1 = ''.join([digit for digit in str_n if int(digit) % 2 == 0])
+    n2 = ''.join([digit for digit in str_n if int(digit) % 2 != 0])
+    return int(n1) if n1 else 0, int(n2) if n2 else 0
+
+# Exercice 10: Additionner deux nombres binaires
+def addition_binaire():
+    a_binaire = int(input("Entrez le premier nombre binaire (exemple: 1101) : "), 2)
+    b_binaire = int(input("Entrez le second nombre binaire (exemple: 1010) : "), 2)
+    return bin(a_binaire + b_binaire)[2:]
+</code></pre>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.querySelector('pre code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>
