@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cybersécurité - Carbone</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid var(--bleu);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--bleu);
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--gris);
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            float: right;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cybersécurité et Cyberespace</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Afficher du code HTML en texte</h1>
+            <button class="copy-btn" onclick="copyContent()">Copier le texte</button>
+        </div>
+
+        <h2>Code HTML à afficher :</h2>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Template Simple&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            text-align: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+        .content h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        .content p {
+            font-size: 18px;
+            color: #666;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #008CBA;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #007bb5;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class="navbar"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="content"&gt;
+        &lt;h1&gt;Bienvenue sur mon site !&lt;/h1&gt;
+        &lt;p&gt;Voici un exemple de page avec une navbar, des boutons et un peu de texte.&lt;/p&gt;
+        
+        &lt;div class="buttons"&gt;
+            &lt;button class="btn-primary"&gt;Cliquez ici&lt;/button&gt;
+            &lt;button class="btn-secondary"&gt;Autre action&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+    </div>
+
+    <script>
+        function copyContent() {
+            const content = document.querySelector('pre').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Contenu copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>
