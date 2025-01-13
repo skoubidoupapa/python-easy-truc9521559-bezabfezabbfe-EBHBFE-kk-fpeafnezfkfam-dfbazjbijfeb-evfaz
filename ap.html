@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuration de la base de données avec UwAmp</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid var(--bleu);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--bleu);
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--gris);
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            float: right;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Tutoriel UwAmp</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Configuration de la base de données avec UwAmp</h1>
+            <button class="copy-btn" onclick="copyContent()">Copier le texte</button>
+        </div>
+
+        <h2>1. Télécharger et installer UwAmp</h2>
+        <ul>
+            <li>Rendez-vous sur le site officiel d'<a href="https://www.uwamp.com/fr/" target="_blank">UwAmp</a>.</li>
+            <li>Téléchargez la dernière version stable de UwAmp pour Windows.</li>
+            <li>Exécutez l'installateur et suivez les instructions.</li>
+        </ul>
+
+        <h2>2. Lancer UwAmp</h2>
+        <ul>
+            <li>Une fois UwAmp installé, ouvrez-le.</li>
+            <li>L'interface d'UwAmp affiche plusieurs informations :</li>
+            <ul>
+                <li>Le serveur Apache est indiqué par "Apache Status".</li>
+                <li>Le serveur MySQL est indiqué par "MySQL Status".</li>
+            </ul>
+            <li>Cliquez sur "Start" à côté d'Apache et MySQL pour démarrer les services. Une fois démarré, Apache et MySQL devraient afficher "Running".</li>
+        </ul>
+
+        <h2>3. Accéder à phpMyAdmin pour gérer la base de données</h2>
+        <p>UwAmp intègre <strong>phpMyAdmin</strong>, un outil graphique pour gérer facilement les bases de données MySQL.</p>
+        <ul>
+            <li>Ouvrez votre navigateur et allez à l'adresse suivante : <code>http://localhost/phpmyadmin</code></li>
+            <li>Les identifiants par défaut sont :</li>
+            <ul>
+                <li><strong>Utilisateur</strong> : root</li>
+                <li><strong>Mot de passe</strong> : (vide, aucun mot de passe par défaut)</li>
+            </ul>
+        </ul>
+
+        <h2>4. Créer une base de données</h2>
+        <ul>
+            <li>Cliquez sur <strong>Bases de données</strong> dans le menu principal de phpMyAdmin.</li>
+            <li>Entrez un nom pour votre nouvelle base, par exemple <code>test_db</code>, puis cliquez sur <strong>Créer</strong>.</li>
+        </ul>
+
+        <h2>5. Créer des tables dans la base de données</h2>
+        <ul>
+            <li>Cliquez sur le nom de la base de données dans le menu à gauche.</li>
+            <li>Cliquez sur l'onglet <strong>Structure</strong> et cliquez sur <strong>Créer une table</strong>.</li>
+            <li>Entrez un nom pour la table, par exemple <code>utilisateurs</code>, et définissez les colonnes comme suit :</li>
+            <ul>
+                <li><strong>id</strong> : INT, Auto-incrémenté, Clé primaire</li>
+                <li><strong>nom</strong> : VARCHAR(100)</li>
+                <li><strong>email</strong> : VARCHAR(100)</li>
+            </ul>
+        </ul>
+
+        <h2>6. Insérer des données dans la table</h2>
+        <ul>
+            <li>Cliquez sur l'onglet <strong>Insérer</strong> et entrez des données comme suit :</li>
+            <ul>
+                <li><strong>nom</strong> : "John Doe"</li>
+                <li><strong>email</strong> : "john.doe@example.com"</li>
+            </ul>
+            <li>Cliquez sur <strong>Exécuter</strong> pour insérer les données.</li>
+        </ul>
+
+        <h2>7. Se connecter à la base de données depuis PHP</h2>
+        <p>Voici un exemple de code PHP pour se connecter à MySQL et récupérer les données d'une table :</p>
+        <pre><code>
+        &lt;?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "test_db"; // le nom de votre base de données
+
+        // Créer la connexion
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Vérifier la connexion
+        if ($conn-&gt;connect_error) {
+            die("Échec de la connexion: " . $conn-&gt;connect_error);
+        }
+
+        // Exécuter une requête SQL pour récupérer les données
+        $sql = "SELECT id, nom, email FROM utilisateurs";
+        $result = $conn-&gt;query($sql);
+
+        if ($result-&gt;num_rows &gt; 0) {
+            // Sortir les données de chaque ligne
+            while($row = $result-&gt;fetch_assoc()) {
+                echo "id: " . $row["id"]. " - Nom: " . $row["nom"]. " - Email: " . $row["email"]. "&lt;br&gt;";
+            }
+        } else {
+            echo "0 résultats";
+        }
+
+        // Fermer la connexion
+        $conn-&gt;close();
+        ?&gt;
+        </code></pre>
+
+        <h2>8. Configurer Php.ini (facultatif)</h2>
+        <ul>
+            <li>Ouvrez le fichier <code>php.ini</code> situé dans le dossier <code>bin\php</code> où UwAmp est installé.</li>
+            <li>Apportez les modifications nécessaires puis redémarrez Apache pour appliquer les changements.</li>
+        </ul>
+
+        <h2>9. Accéder à votre projet via le navigateur</h2>
+        <ul>
+            <li>Placez votre projet PHP dans le dossier <code>www</code> de UwAmp.</li>
+            <li>Accédez à votre projet en ouvrant un navigateur et en tapant : <code>http://localhost/votre_projet/</code></li>
+        </ul>
+
+        <h2>10. Sauvegarder et restaurer les bases de données</h2>
+        <ul>
+            <li><strong>Exporter</strong> : Allez dans l'onglet <strong>Exporter</strong> de phpMyAdmin et sélectionnez le format SQL.</li>
+            <li><strong>Importer</strong> : Allez dans l'onglet <strong>Importer</strong>, choisissez un fichier SQL à importer.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Vous avez maintenant un environnement complet pour créer et gérer des bases de données MySQL avec UwAmp. Si vous avez des questions supplémentaires, n'hésitez pas à demander !</p>
+    </div>
+
+    <script>
+        function copyContent() {
+            const content = document.querySelector('.container').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Contenu copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>
