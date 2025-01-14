@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Code PHP - Inscription</title>
+    <style>
+        :root {
+            --bleu: #3498db;
+            --jaune: #f1c40f;
+            --gris: #34495e;
+            --gris-clair: #ecf0f1;
+            --gris-fond: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gris-fond);
+            color: var(--gris);
+        }
+
+        .navbar {
+            background-color: var(--bleu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            color: var(--jaune);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-section {
+            background-color: var(--gris-clair);
+            border-left: 5px solid var(--bleu);
+            padding: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+
+        .code-header {
+            background-color: var(--bleu);
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background-color: var(--jaune);
+            color: var(--gris);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Code PHP - Inscription</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="code-header">
+            <span>PHP</span>
+            <button class="copy-btn" onclick="copyCode()">Copier</button>
+        </div>
+        <div class="code-section">
+            <pre><code>&lt;?php
+// Connexion à la base de données
+$host = 'localhost';
+$dbname = 'utilisateurs';
+$username = 'root'; // Remplacez par votre nom d'utilisateur
+$password = ''; // Remplacez par votre mot de passe
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e-&gt;getMessage());
+}
+
+// Initialisation des variables pour les messages
+$message = "";
+
+// Traitement du formulaire
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nom = htmlspecialchars($_POST['nom']);
+    $email = htmlspecialchars($_POST['email']);
+    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_BCRYPT);
+
+    // Vérifier si l'email est déjà utilisé
+    $query = $pdo-&gt;prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+    $query-&gt;execute(['email' =&gt; $email]);
+    $emailExists = $query-&gt;fetchColumn();
+
+    if ($emailExists) {
+        $message = "&lt;p style='color: red;'&gt;Cet email est déjà utilisé.&lt;/p&gt;";
+    } else {
+        // Insérer les données dans la base
+        $query = $pdo-&gt;prepare("INSERT INTO users (nom, email, mot_de_passe) VALUES (:nom, :email, :mot_de_passe)");
+        if ($query-&gt;execute(['nom' =&gt; $nom, 'email' =&gt; $email, 'mot_de_passe' =&gt; $mot_de_passe])) {
+            $message = "&lt;p style='color: green;'&gt;Inscription réussie !&lt;/p&gt;";
+        } else {
+            $message = "&lt;p style='color: red;'&gt;Une erreur est survenue. Veuillez réessayer.&lt;/p&gt;";
+        }
+    }
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang='fr'&gt;
+&lt;head&gt;
+    &lt;meta charset='UTF-8'&gt;
+    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
+    &lt;title&gt;Formulaire d'inscription&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Inscription&lt;/h2&gt;
+    &lt;?= $message; ?&gt;
+    &lt;form action='' method='POST'&gt;
+        &lt;label for='nom'&gt;Nom :&lt;/label&gt;
+        &lt;input type='text' id='nom' name='nom' required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for='email'&gt;Email :&lt;/label&gt;
+        &lt;input type='email' id='email' name='email' required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for='mot_de_passe'&gt;Mot de passe :&lt;/label&gt;
+        &lt;input type='password' id='mot_de_passe' name='mot_de_passe' required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;button type='submit'&gt;S'inscrire&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.querySelector('pre code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copié dans le presse-papiers !');
+            });
+        }
+    </script>
+</body>
+</html>
